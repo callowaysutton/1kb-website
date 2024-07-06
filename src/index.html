@@ -55,11 +55,12 @@
       Home: "<h2>Single Packet Website</h2>You can do a lot with only a single TCP packet to be honest. Everything, even the other pages, CSS, JS, HTTP headers and more, can all fit into the single 1500 byte TCP packet that is standard across the internet. This took inspiration off of website optimizations I read about which try and use the first 14kB to load the bulk of the website in, I wanted to see if I could take it a step further and do it in a single packet, and I did! I even managed to make it somewhat mobile friendly!",
       About: "<h2>About</h2>Since having a single web page be under ~1300 bytes would be way too easy I decided to try and design a tiny little SPA. To save as much room as possible, certain tags aren't closed and GZIP is used to compress everything.",
     };
-    document.querySelectorAll("li").forEach(function (e) {
+    d=document,qh=d.querySelector("main")
+    d.querySelectorAll("li").forEach(function (e) {
       e.addEventListener("mousedown", function (e) {
-        document.querySelector("main").innerHTML = wb[e.target.innerText];
+        qh.innerHTML = wb[e.target.innerText];
       });
     });
-    document.querySelector("main").innerHTML = wb["Home"];
+    qh.innerHTML = wb["Home"];
   </script>
 </html>
